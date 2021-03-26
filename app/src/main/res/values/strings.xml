@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Primer Examen Movil</string>
+    <string name="app_name">El reino animal</string>
+    <string name="portada_descripcion">Imagen de la selva</string>
+    <string name="imagen_animal">Imagen de la selva</string>
 </resources>
