@@ -3,6 +3,7 @@ package com.example.primerexamenmovil;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class activity_videos extends AppCompatActivity {
@@ -16,11 +17,13 @@ public class activity_videos extends AppCompatActivity {
         // recibimos los datos
         Bundle bundle = getIntent().getExtras();
         String url = bundle.getString("url");
-        video.findViewById(R.id.wvVideos);
+        video = (WebView) findViewById(R.id.wvVideos);
+        WebSettings webSettings = video.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         String html = "";
         html += "<html lang=\"en\" dir=\"ltr\">\n" +
                 "  <body>\n" +
-                "      <iframe src=\""+ url +"\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>\n" +
+                "<iframe width=\"100%\" height=\"315\" src=\""+url+"\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>" +
                 "  </body>\n" +
                 "</html>";
         video.loadData(html, "text/html", "utf-8" );
