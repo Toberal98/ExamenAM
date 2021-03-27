@@ -2,9 +2,7 @@ package com.example.primerexamenmovil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,12 +36,6 @@ public class actividy_detalle_final extends AppCompatActivity {
         titulo.setText(animal.getTitulo());
         descripcion.setText(animal.getDescripcion());
         imagen.setImageResource(animal.getImagenAnimal());
-        boton.setText("Ver video sobre " + animal.getTitulo());
-    }
-
-    public void abrirVideo(View view){
-        Intent video = new Intent(actividy_detalle_final.this, activity_videos.class);
-        video.putExtra("url", animal.getUrlVideo());
-        startActivity(video);
+        boton.setText("Ver video sobre los " + animal.getTitulo());
     }
 }

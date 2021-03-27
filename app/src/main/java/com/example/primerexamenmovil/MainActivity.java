@@ -1,5 +1,6 @@
 package com.example.primerexamenmovil;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         rcvAnimales.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(),
                 rcvAnimales, new RecyclerItemClickListener.OnItemClickListener() {
 
+
             @Override
             public void onItemClick(View view, int position) {
                 Context context = rcvAnimales.getContext();
@@ -54,6 +58,23 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
     }
+        //mostrar y ocultar menu overflow
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menuoverflow,menu);
+        return true;
+    }
+    //Metodo ara los item del menu
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item) {
+        //Obtener el item seleccionado
+        int id = item.getItemId();
 
+        if (id == R.id.itIntegrantes) {
+            Intent integrantes = new Intent(MainActivity.this,Integrantes.class );
+            startActivity(integrantes);
+        }
 
+        return super.onOptionsItemSelected(item);
+    }
 }
