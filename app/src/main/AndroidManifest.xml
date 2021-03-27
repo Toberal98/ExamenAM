@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.primerexamenmovil">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +11,9 @@
         android:theme="@style/Theme.PrimerExamenMovil">
         <activity android:name=".Integrantes"></activity>
         <activity android:name=".actividy_detalle_final" />
+        <activity android:name=".activity_videos" android:screenOrientation="sensor"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
