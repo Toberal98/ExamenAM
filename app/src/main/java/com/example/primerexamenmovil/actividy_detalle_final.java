@@ -1,9 +1,12 @@
 package com.example.primerexamenmovil;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +26,11 @@ public class actividy_detalle_final extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividy_detalle_final);
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         titulo = (TextView)findViewById(R.id.tvTituloDetalle);
         descripcion = (TextView)findViewById(R.id.tvDescripcionDetalle);
@@ -36,9 +44,18 @@ public class actividy_detalle_final extends AppCompatActivity {
         animal = lista.get(position);
 
         titulo.setText(animal.getTitulo());
-        descripcion.setText(animal.getDescripcion());
+        descripcion.setText(animal.getDescripcionLarga());
         imagen.setImageResource(animal.getImagenAnimal());
         boton.setText("Ver video sobre " + animal.getTitulo());
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     public void abrirVideo(View view){
         Intent video = new Intent(actividy_detalle_final.this, activity_videos.class);

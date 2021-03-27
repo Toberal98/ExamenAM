@@ -40,7 +40,7 @@ public class AnimalesAdapter extends RecyclerView.Adapter<AnimalesAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.titulo.setText(listaAnimales.get(position).getTitulo());
-        holder.descripcion.setText(listaAnimales.get(position).getDescripcion());
+        holder.descripcion.setText(listaAnimales.get(position).getDescripcionCorta());
         holder.fotoAnimal.setImageResource(listaAnimales.get(position).getImagenAnimal());
     }
 

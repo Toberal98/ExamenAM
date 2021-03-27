@@ -1,8 +1,12 @@
 package com.example.primerexamenmovil;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.webkit.WebView;
 
 public class Integrantes extends AppCompatActivity {
@@ -16,12 +20,17 @@ public class Integrantes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_integrantes);
 
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         //Se vincula el webview al layout
         html = findViewById(R.id.wvContenido);
 
         String texto;
         texto = "<html><body>";
-        texto+="<div style=\"border-radius: 25px; border-style:solid;background-color: #D66148; ";
+        texto+="<div style=\"border-radius: 25px; border-style:1px #AAB7B8 solid;background-color: #3498DB; color:white; ";
         texto+="padding: 60px;border-width: 2px\">";
         texto+="<p align=\"justify\">";
         texto+="<h2>";
@@ -39,5 +48,14 @@ public class Integrantes extends AppCompatActivity {
 
         html.loadData(texto,"text/html","utf-8");
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,15 +1,19 @@
 package com.example.primerexamenmovil;
 
 public class AnimalModelo {
-    private String titulo, descripcion, urlVideo;
+    private String titulo;
+    private String descripcionCorta;
+    private String urlVideo;
+    private String descripcionLarga;
     private int imagenAnimal;
     public AnimalModelo() {
     }
-    public AnimalModelo(String titulo, String descripcion, String urlVideo, int imagenAnimal) {
+    public AnimalModelo(String titulo, String descripcionCorta,String descripcionLarga, String urlVideo, int imagenAnimal) {
         this.titulo = titulo;
-        this.descripcion = descripcion;
+        this.descripcionCorta = descripcionCorta;
         this.urlVideo = urlVideo;
         this.imagenAnimal = imagenAnimal;
+        this.descripcionLarga = descripcionLarga;
     }
 
     public String getTitulo() {
@@ -28,12 +32,12 @@ public class AnimalModelo {
         this.imagenAnimal = imagenAnimal;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionCorta() {
+        return descripcionCorta;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcionCorta(String descripcionCorta) {
+        this.descripcionCorta = descripcionCorta;
     }
 
     public String getUrlVideo() {
@@ -42,5 +46,12 @@ public class AnimalModelo {
 
     public void setUrlVideo(String urlVideo) {
         this.urlVideo = urlVideo;
+    }
+    public String getDescripcionLarga() {
+        return descripcionLarga;
+    }
+
+    public void setDescripcionLarga(String descripcionLarga) {
+        this.descripcionLarga = descripcionLarga;
     }
 }
