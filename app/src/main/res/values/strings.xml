@@ -2,4 +2,5 @@
     <string name="app_name">El reino animal</string>
     <string name="portada_descripcion">Imagen de la selva</string>
     <string name="imagen_animal">Imagen de la selva</string>
+    <string name="btn_video">Ver video sobre</string>
 </resources>
